@@ -1,0 +1,8 @@
+export { default as BookOpen } from './BookOpen'
+export { default as Close } from './Close'
+export { default as Favourites } from './Favourites'
+export { default as History } from './History'
+export { default as Logo } from './Logo'
+export { default as Search } from './Search'
+export { default as Add } from './Add'
+export { default as User } from './User'
