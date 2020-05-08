@@ -88,7 +88,7 @@ function Search() {
 
   return (
     <Box as={SafeAreaView} bg="white" flex={1}>
-      <Box as={Animated.View}>
+      <Box as={Animated.View} top={isSearchFocus ? -100 : 0}>
         <CustomHeader backgroundColor="white" />
       </Box>
       {/* Header */}
@@ -97,6 +97,7 @@ function Search() {
         position="relative"
         zIndex={1}
         height={heroHeight}
+        py={0}
       >
         <Box as={Animated.View} opacity={bgOpacity}>
           <Background pt={60} pb={26}>
@@ -109,8 +110,8 @@ function Search() {
         <Box
           position="absolute"
           left={0}
-          bottom={isSearchFocus ? 0 : -42}
-          p={16}
+          bottom={isSearchFocus ? 42 : -26}
+          px={16}
           width="100%"
         >
           <SearchInput onChangeFocus={(status) => setSearchFocus(status)} />
@@ -120,7 +121,7 @@ function Search() {
       {/* content */}
       <Box flex={1} bg="softRed" pt={isSearchFocus ? 0 : 26}>
         {isSearchFocus ? (
-          <Box p={30} flex={1}>
+          <Box px={30} flex={1}>
             <FlatList
               keyboardShouldPersistTaps="always"
               keyboardDismissMode="on-drag"

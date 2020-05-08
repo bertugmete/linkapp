@@ -6,9 +6,12 @@ import {
   size,
   space,
   typography,
-  fontSize
+  fontSize,
+  flexbox
 } from 'styled-system'
 
-const Text = styled(T)(compose(color, size, space, typography, fontSize))
+const Text = styled(T)(
+  compose(color, size, space, typography, fontSize, flexbox)
+)
 
 export default Text
