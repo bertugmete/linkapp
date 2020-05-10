@@ -8,23 +8,22 @@ import SettingsSvg from '../../components/icons/Settings'
 import { User } from '../../components/icons'
 import Text from '../../components/text'
 
-export default function CustomHeader(props) {
+export default function CustomHeader({ navigation, onPress }) {
   const refRBSheet = useRef()
-
   return (
     <>
-      <Box flexDirection="row" height={50} backgroundColor="white" {...props}>
+      <Box flexDirection="row" height={50} backgroundColor="white">
         <Box flex={1} justifyContent="center" alignItems="center">
           <Button onPress={() => refRBSheet.current.open()}>
-            <Menu color={theme.colors.textLight} />
+            <Menu color={theme.colors.textDark} />
           </Button>
         </Box>
         <Box flex={5} justifyContent="center" alignItems="center">
           <Logo width={50} color="red" />
         </Box>
         <Box flex={1} justifyContent="center" alignItems="center">
-          <Button>
-            <Add color={theme.colors.textLight} />
+          <Button onPress={onPress}>
+            <Add color={theme.colors.textDark} />
           </Button>
         </Box>
       </Box>

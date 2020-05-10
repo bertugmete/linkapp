@@ -16,6 +16,8 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import TabBar from './components/tabBar'
 
 import theme from './utils/theme'
+import Button from './components/button'
+import { Left } from './components/icons'
 
 const Tab = createBottomTabNavigator()
 const HomeStack = createStackNavigator()
@@ -37,7 +39,23 @@ function SearchStackScreen() {
       <HomeStack.Screen
         name="Detail"
         component={Detail}
-        options={navOptionsHandler}
+        options={({ route, navigation }) => {
+          return {
+            title: 'Link Ekle',
+            headerStyle: {
+              backgroundColor: theme.colors.softRed
+            },
+            headerLeft: () => (
+              <Button
+                px={16}
+                height="100%"
+                onPress={() => navigation.navigate('Home')}
+              >
+                <Left color={theme.colors.textDark} />
+              </Button>
+            )
+          }
+        }}
       />
     </HomeStack.Navigator>
   )
@@ -49,7 +67,7 @@ function App() {
       <SafeAreaProvider>
         <NavigationContainer>
           <Tab.Navigator
-            initialRouteName="Favourites"
+            initialRouteName="Search"
             tabBar={(props) => <TabBar {...props} />}
           >
             <Tab.Screen

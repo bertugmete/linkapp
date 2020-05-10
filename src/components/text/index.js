@@ -7,11 +7,12 @@ import {
   space,
   typography,
   fontSize,
-  flexbox
+  flexbox,
+  border
 } from 'styled-system'
 
 const Text = styled(T)(
-  compose(color, size, space, typography, fontSize, flexbox)
+  compose(color, size, space, typography, fontSize, flexbox, border)
 )
 
 export default Text

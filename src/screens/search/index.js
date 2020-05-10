@@ -9,6 +9,7 @@ import Box from '../../components/box'
 import Text from '../../components/text'
 import SearchInput from '../../components/searchInput'
 import Background from '../../components/background'
+
 import { CardTitle, CardContent, CardContainer } from '../../components/card'
 import CustomHeader from '../../components/header'
 
@@ -52,7 +53,7 @@ const DATA2 = [
 
 const HERO_HEIGHT = 230
 
-function Search() {
+function Search({ navigation }) {
   const [isSearchFocus, setSearchFocus] = React.useState(false)
 
   const [heroHeight] = React.useState(new Animated.Value(HERO_HEIGHT))
@@ -89,7 +90,7 @@ function Search() {
   return (
     <Box as={SafeAreaView} bg="white" flex={1}>
       <Box as={Animated.View} top={isSearchFocus ? -100 : 0}>
-        <CustomHeader backgroundColor="white" />
+        <CustomHeader onPress={() => navigation.navigate('Detail')} />
       </Box>
       {/* Header */}
       <Box
