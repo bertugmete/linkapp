@@ -44,7 +44,7 @@ function SearchInput({ onChangeFocus }) {
           color="textDark"
           borderWidth={1}
           borderColor={isFocus ? '#D1D1D1' : 'transparent'}
-          placeholder="Türkçe Sözlük’te Ara"
+          placeholder="Link Ara"
           placeholderTextColor="textMedium"
           pl={52}
           borderRadius="normal"

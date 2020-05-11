@@ -12,44 +12,7 @@ import Background from '../../components/background'
 
 import { CardTitle, CardContent, CardContainer } from '../../components/card'
 import CustomHeader from '../../components/header'
-
-const DATA = [
-  {
-    title: 'Twitter',
-    link: 'https://www.twitter.com/tr/'
-  },
-  {
-    title: 'Facebook',
-    link: 'https://www.facebook.com/'
-  },
-  {
-    title: 'Apple',
-    link: 'https://www.apple.com/tr/'
-  },
-  {
-    title: 'Twitter',
-    link: 'https://www.twitter.com/tr/'
-  },
-  {
-    title: 'Facebook',
-    link: 'https://www.facebook.com/tr/'
-  },
-  {
-    title: 'Apple',
-    link: 'https://www.apple.com/tr/'
-  }
-]
-
-const DATA2 = [
-  {
-    title: 'Javascript',
-    link: 'https://javascript.com'
-  },
-  {
-    title: 'ReactJs',
-    link: 'https://reactjs.com'
-  }
-]
+import { DATA2, DATA } from '../../data/lastSearchData'
 
 const HERO_HEIGHT = 230
 
