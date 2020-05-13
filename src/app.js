@@ -7,9 +7,12 @@ import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import Search from './screens/search'
 import History from './screens/history'
-import Favourites from './screens/favourites'
+import Links from './screens/links'
 import Detail from './screens/detail'
 import Profile from './screens/profile'
+import SubFolder from './screens/subFolder'
+
+import AddFolder from './screens/addFolder'
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
@@ -57,7 +60,56 @@ function SearchStackScreen() {
           }
         }}
       />
+      <HomeStack.Screen
+        name="AddFolder"
+        component={AddFolder}
+        options={({ route, navigation }) => {
+          return {
+            title: 'Klasör Ekle',
+            headerStyle: {
+              backgroundColor: theme.colors.softRed
+            },
+            headerLeft: () => (
+              <Button
+                px={16}
+                height="100%"
+                onPress={() => navigation.navigate('Detail')}
+              >
+                <Left color={theme.colors.textDark} />
+              </Button>
+            )
+          }
+        }}
+      />
     </HomeStack.Navigator>
+  )
+}
+
+const LinkStack = createStackNavigator()
+
+function LinksStackScreen() {
+  return (
+    <LinkStack.Navigator>
+      <LinkStack.Screen
+        name="Links"
+        component={Links}
+        options={{ title: 'Linklerim' }}
+      />
+      <LinkStack.Screen
+        name="SubFolder"
+        component={SubFolder}
+        navigationOptions={({ route }) => ({ header: route.params.title })}
+        // options={({ route }) => ({ title: route.params.title })}
+        options={({ route, navigation }) => {
+          return {
+            title: route.params.title,
+            headerStyle: {
+              backgroundColor: theme.colors.softRed
+            }
+          }
+        }}
+      />
+    </LinkStack.Navigator>
   )
 }
 
@@ -80,11 +132,7 @@ function App() {
               component={SearchStackScreen}
               options={navOptionsHandler}
             />
-            <Tab.Screen
-              name="Favourites"
-              component={Favourites}
-              options={navOptionsHandler}
-            />
+            <Tab.Screen name="Links" component={LinksStackScreen} />
             <TopTab.Screen
               name="Profile"
               component={Profile}

@@ -1,26 +1,39 @@
 export const FolderItemData = [
   {
-    name: 'Yemekler',
+    title: 'Yemekler',
     value: 'Yemekler',
     items: [
       {
-        name: 'Çorbalar',
-        value: 'Çorbalar'
+        title: 'Çorbalar',
+        value: 'Çorbalar',
+        items: [
+          {
+            title: 'Yayla Çorbası',
+            value: 'Yayla Çorbası',
+            items: [
+              {
+                title: 'Yayla Çorbası Tarifi',
+                type: 'link',
+                link: 'https://yemek.com/tarif/yayla-corbasi/'
+              }
+            ]
+          }
+        ]
       },
       {
-        name: 'Salatalar',
+        title: 'Salatalar',
         value: 'Salatalar'
       },
       {
-        name: 'Tatlılar',
+        title: 'Tatlılar',
         value: 'Tatlılar',
         items: [
           {
-            name: 'Sütlü Tatlılar',
+            title: 'Sütlü Tatlılar',
             value: 'Sütlü Tatlılar'
           },
           {
-            name: 'Şerbetli Tatlılar',
+            title: 'Şerbetli Tatlılar',
             value: 'Şerbetli Tatlılar'
           }
         ]
@@ -28,15 +41,25 @@ export const FolderItemData = [
     ]
   },
   {
-    name: 'Kıyafetler',
+    title: 'Kıyafetler',
     value: 'Kıyafetler'
   },
   {
-    name: 'Kitaplar',
+    title: 'Kitaplar',
     value: 'Kitaplar'
   },
   {
-    name: 'Yazılım',
-    value: 'Yazılım'
+    title: 'Yazılım',
+    value: 'Yazılım',
+    items: [
+      {
+        title: 'Javascript',
+        value: 'Javascript'
+      },
+      {
+        title: 'C#',
+        value: 'C#'
+      }
+    ]
   }
 ]
