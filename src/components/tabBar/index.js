@@ -1,10 +1,11 @@
 import React from 'react'
 
 import Button from '../button'
-import { Search, Favourites, BookOpen } from '../icons'
+import { Search, Favourites, BookOpen, Link } from '../icons'
 import Box from '../box'
 
 import theme from '../../utils/theme'
+import Links from '../../screens/links'
 
 function TabBar({ state, descriptors, navigation }) {
   return (
@@ -55,7 +56,7 @@ function TabBar({ state, descriptors, navigation }) {
                 <Search color="white" />
               </TabBarButton>
             )
-          case 'Favourites':
+          case 'Links':
             return (
               <TabBarButton
                 onPress={onPress}
@@ -63,7 +64,7 @@ function TabBar({ state, descriptors, navigation }) {
                 label={label}
                 key={label}
               >
-                <Favourites
+                <Link
                   color={isFocused ? theme.colors.red : theme.colors.textLight}
                 />
               </TabBarButton>
